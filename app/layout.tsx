@@ -1,86 +1,153 @@
 import type { Metadata } from "next";
+
 import {
   Cormorant_Garamond,
   Inter,
-  Instrument_Serif,
 } from "next/font/google";
+
 
 import "./globals.css";
 
+
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+
+
+
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
+
+  subsets: [
+    "latin"
+  ],
+
+  variable:
+    "--font-inter",
+
+  display:
+    "swap",
+
 });
+
+
 
 const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
-  display: "swap",
+
+  subsets: [
+    "latin"
+  ],
+
+  weight: [
+    "300",
+    "400",
+    "500",
+    "600",
+    "700"
+  ],
+
+  variable:
+    "--font-serif",
+
+  display:
+    "swap",
+
 });
 
-const instrument = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-instrument",
-  display: "swap",
-});
+
 
 
 export const metadata: Metadata = {
-  title: {
-    default: "Drishya Weddings | Luxury Wedding Photography",
-    template: "%s | Drishya Weddings",
-  },
+
+
+  title:
+    "Drishya Weddings | Luxury Wedding Photography India",
+
 
   description:
-    "Drishya Weddings creates timeless luxury wedding photography and cinematic films across India.",
+    "Drishya Weddings captures authentic emotions and cinematic wedding stories across India.",
+
 
   keywords: [
-    "Luxury Wedding Photography",
-    "Indian Wedding Photographer",
-    "Wedding Films",
-    "Destination Weddings India",
+
+    "Wedding Photography India",
+
+    "Luxury Wedding Photographer",
+
+    "Kerala Wedding Photographer",
+
+    "Bangalore Wedding Photographer",
+
+    "Cinematic Wedding Films"
+
   ],
 
-  authors: [
-    {
-      name: "Drishya Weddings",
-    },
-  ],
-
-  robots: {
-    index: true,
-    follow: true,
-  },
 
   openGraph: {
+
     title:
-      "Drishya Weddings | Luxury Wedding Photography",
+      "Drishya Weddings",
+
+
     description:
-      "Elegant wedding photography crafted as timeless visual stories.",
-    type: "website",
+      "Timeless wedding stories captured with emotion and cinematic elegance.",
+
+
+    type:
+      "website",
+
   },
+
+
 };
 
 
+
+
 export default function RootLayout({
+
   children,
+
 }: Readonly<{
-  children: React.ReactNode;
+
+  children:
+    React.ReactNode;
+
 }>) {
+
+
   return (
-    <html lang="en">
+
+    <html
+
+      lang="en"
+
+    >
+
+
       <body
+
         className={`
           ${inter.variable}
           ${cormorant.variable}
-          ${instrument.variable}
+          antialiased
         `}
+
       >
+
+
+        <Navbar />
+
+
         {children}
+
+
+        <Footer />
+
+
       </body>
+
+
     </html>
+
   );
+
 }

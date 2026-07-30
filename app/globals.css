@@ -4,46 +4,77 @@
 :root {
 
   --background:
-    #F8F6F2;
+    #F8F5EF;
 
   --foreground:
-    #111111;
+    #151515;
+
+
+  --surface:
+    #EFE7DC;
+
 
   --accent:
-    #A68A64;
+    #B08D57;
+
 
   --border:
-    #EAE6DF;
+    #DED5C8;
 
 }
+
 
 
 * {
-  box-sizing: border-box;
+
+  box-sizing:
+    border-box;
+
 }
+
 
 
 html {
 
   scroll-behavior:
-  smooth;
+    smooth;
 
 }
+
 
 
 body {
 
+  margin:
+    0;
+
   background:
-  var(--background);
+    var(--background);
 
   color:
-  var(--foreground);
+    var(--foreground);
 
   font-family:
-  var(--font-inter),
-  sans-serif;
+    var(--font-inter),
+    sans-serif;
 
 }
+
+
+
+::selection {
+
+  background:
+    var(--accent);
+
+  color:
+    white;
+
+}
+
+
+
+/* Luxury Typography */
 
 
 h1,
@@ -52,41 +83,132 @@ h3,
 h4 {
 
   font-family:
-  var(--font-cormorant),
-  serif;
+    var(--font-serif),
+    serif;
 
   font-weight:
-  400;
+    400;
+
+  letter-spacing:
+    -0.02em;
 
 }
 
 
-.serif {
 
-  font-family:
-  var(--font-instrument),
-  serif;
-
-}
-
-
-::selection {
-
-  background:
-  var(--accent);
-
-  color:
-  white;
-
-}
+/* Container System */
 
 
 .container-luxury {
 
   width:
-  min(90%,1400px);
+    100%;
 
-  margin-inline:auto;
+  max-width:
+    1400px;
+
+  margin:
+    0 auto;
+
+  padding-left:
+    1.5rem;
+
+  padding-right:
+    1.5rem;
+
+}
+
+
+
+@media(min-width:768px){
+
+  .container-luxury {
+
+    padding-left:
+      3rem;
+
+    padding-right:
+      3rem;
+
+  }
+
+}
+
+
+
+
+/* Luxury Tracking */
+
+
+.tracking-luxury {
+
+  letter-spacing:
+    0.25em;
+
+}
+
+
+
+/* Hide Scrollbar */
+
+
+::-webkit-scrollbar {
+
+  width:
+    8px;
+
+}
+
+
+
+::-webkit-scrollbar-track {
+
+  background:
+    transparent;
+
+}
+
+
+
+::-webkit-scrollbar-thumb {
+
+  background:
+    var(--accent);
+
+}
+
+
+
+
+/* Image Defaults */
+
+
+img {
+
+  user-select:
+    none;
+
+}
+
+
+
+
+/* Smooth Links */
+
+
+a {
+
+  transition:
+    opacity 300ms ease;
+
+}
+
+
+
+a:hover {
+
+  opacity:
+    0.75;
 
 }
 

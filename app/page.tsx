@@ -1,28 +1,17 @@
-export default function Home() {
-  return (
-    <main className="min-h-screen">
+import Hero from "../components/home/Hero";
 
-      <section className="
-        h-screen
-        flex
-        items-center
-        justify-center
-      ">
 
-        <h1
-          className="
-          text-center
-          text-6xl
-          md:text-8xl
-          "
-        >
+export default function Home(){
 
-          Drishya Weddings
 
-        </h1>
+return (
 
-      </section>
+<main>
 
-    </main>
-  );
+<Hero/>
+
+</main>
+
+);
+
 }
