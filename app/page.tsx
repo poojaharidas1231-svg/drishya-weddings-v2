@@ -4,6 +4,7 @@ import FeaturedStories from "@/components/home/FeaturedStories";
 import Films from "@/components/home/Films";
 import Experiences from "@/components/home/Experiences";
 import Stats from "@/components/home/Stats";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Films />
       <Experiences />
       <Stats />
+      <Testimonials />
     </main>
   );
 }
