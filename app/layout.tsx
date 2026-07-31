@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Footer from "@/components/layout/Footer";
 
 import {
   Cormorant_Garamond,
@@ -10,7 +11,6 @@ import "./globals.css";
 
 
 import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
 
 
 
@@ -138,6 +138,8 @@ export default function RootLayout({
 
 
         {children}
+
+
 
 
         <Footer />
