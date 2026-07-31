@@ -1,184 +1,139 @@
 "use client";
 
-
-import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { Menu } from "lucide-react";
 
-import {
-  Menu,
-  X,
-} from "lucide-react";
+import useScroll from "@/hooks/useScroll";
 
-import {
-  navigation
-} from "../../constants/navigation";
-
-
-import MobileMenu from "./MobileMenu";
-
-
+const navLinks = [
+  {
+    name: "Stories",
+    href: "/stories",
+  },
+  {
+    name: "Films",
+    href: "/films",
+  },
+  {
+    name: "Experiences",
+    href: "/experiences",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+];
 
 export default function Navbar() {
-
-
-  const [
-    open,
-    setOpen
-  ] = useState(false);
-
-
+  const scrolled = useScroll();
 
   return (
-
-    <header
-
-      className="
-      fixed
-      top-0
-      left-0
-      w-full
-      z-50
-      "
-
+    <motion.header
+      initial={{
+        opacity: 0,
+        y: -20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.6,
+      }}
+      className={`
+        fixed
+        top-0
+        left-0
+        z-50
+        w-full
+        transition-all
+        duration-500
+        ${
+          scrolled
+            ? "bg-[#F8F5EF] shadow-sm"
+            : "bg-[#F8F5EF]/80 backdrop-blur-md"
+        }
+      `}
     >
-
-
       <nav
-
         className="
-        container-luxury
-        flex
-        items-center
-        justify-between
-        py-6
+          mx-auto
+          flex
+          h-20
+          max-w-7xl
+          items-center
+          justify-between
+          px-6
+          lg:px-10
         "
-
       >
-
 
         {/* Logo */}
 
         <Link
-
           href="/"
-
           className="
-          font-serif
-          text-3xl
-          tracking-wide
+            font-serif
+            text-xl
+            tracking-[0.35em]
+            text-neutral-900
           "
-
         >
-
-          Drishya
-
+          DRISHYA
         </Link>
-
 
 
         {/* Desktop Navigation */}
 
         <div
-
           className="
-          hidden
-          md:flex
-          items-center
-          gap-10
+            hidden
+            items-center
+            gap-10
+            md:flex
           "
-
         >
 
-          {
-            navigation.map(
-              (item)=>(
-
-                <Link
-
-                  key={
-                    item.href
-                  }
-
-                  href={
-                    item.href
-                  }
-
-                  className="
-                  text-sm
-                  uppercase
-                  tracking-[0.25em]
-                  hover:opacity-60
-                  transition
-                  "
-
-                >
-
-                  {item.label}
-
-                </Link>
-
-              )
-            )
-          }
-
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="
+                text-sm
+                uppercase
+                tracking-[0.2em]
+                text-neutral-700
+                transition-colors
+                hover:text-black
+              "
+            >
+              {link.name}
+            </Link>
+          ))}
 
         </div>
 
 
-
-        {/* Mobile Button */}
+        {/* Mobile Menu */}
 
         <button
-
           className="
-          md:hidden
+            flex
+            items-center
+            justify-center
+            md:hidden
           "
-
-          onClick={
-            ()=>setOpen(!open)
-          }
-
-          aria-label="Menu"
-
+          aria-label="Open menu"
         >
-
-          {
-            open
-
-            ?
-
-            <X size={28}/>
-
-            :
-
-            <Menu size={28}/>
-
-          }
-
-
+          <Menu
+            size={26}
+            className="text-neutral-900"
+          />
         </button>
 
 
       </nav>
-
-
-
-      {
-        open &&
-
-        <MobileMenu
-
-          close={
-            ()=>setOpen(false)
-          }
-
-        />
-
-      }
-
-
-    </header>
-
+    </motion.header>
   );
-
 }

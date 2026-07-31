@@ -1,44 +1,15 @@
-import { cn } from "@/lib/utils";
-
 interface ContainerProps {
-
-  children:
-    React.ReactNode;
-
-
-  className?:
-    string;
-
+  children: React.ReactNode;
+  className?: string;
 }
 
-
 export default function Container({
-
   children,
-
-  className,
-
+  className = "",
 }: ContainerProps) {
-
-
   return (
-
-    <div
-
-      className={cn(
-
-        "container-luxury",
-
-        className
-
-      )}
-
-    >
-
+    <div className={`container-luxury ${className}`}>
       {children}
-
     </div>
-
   );
-
 }
