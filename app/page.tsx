@@ -5,6 +5,8 @@ import Films from "@/components/home/Films";
 import Experiences from "@/components/home/Experiences";
 import Stats from "@/components/home/Stats";
 import Testimonials from "@/components/home/Testimonials";
+import Instagram from "@/components/home/Instagram";
+import CTA from "@/components/home/CTA";
 
 export default function HomePage() {
   return (
@@ -16,6 +18,8 @@ export default function HomePage() {
       <Experiences />
       <Stats />
       <Testimonials />
+      <Instagram />
+      <CTA />
     </main>
   );
 }
