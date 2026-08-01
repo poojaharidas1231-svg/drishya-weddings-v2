@@ -2,10 +2,11 @@ import Link from "next/link";
 
 const links = [
   { label: "Stories", href: "/stories" },
+  { label: "Gallery",href: "/gallery"},
   { label: "Films", href: "/films" },
-  { label: "Experiences", href: "/experiences" },
+  { label: "Experience", href: "/experience" },
   { label: "About", href: "/about" },
-  { label: "Journal", href: "/journal" },
+//   { label: "Journal", href: "/journal" },
   { label: "Contact", href: "/contact" },
 ];
 

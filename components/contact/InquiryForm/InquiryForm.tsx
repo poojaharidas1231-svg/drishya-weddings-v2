@@ -23,14 +23,22 @@ export default function InquiryForm() {
     reset,
   } = useForm<FormData>();
 
-  const onSubmit = async (data: FormData) => {
-    console.log(data);
+    const onSubmit = async (data: FormData) => {
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
 
-    // Email integration will go here
-
-    setSubmitted(true);
-    reset();
-  };
+        if (response.ok) {
+            setSubmitted(true);
+            reset();
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    };
 
   if (submitted) {
     return (

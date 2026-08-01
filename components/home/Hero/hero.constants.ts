@@ -14,7 +14,7 @@ export const heroContent: HeroContent = {
 export const heroButtons: HeroButton[] = [
   {
     label: "View Stories",
-    href: "/portfolio",
+    href: "/stories",
     variant: "primary",
   },
   {

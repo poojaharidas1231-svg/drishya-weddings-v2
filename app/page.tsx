@@ -17,10 +17,10 @@ export default function HomePage() {
       <FeaturedStories />
       <Films />
       <About />
-      <Experiences />
+      {/* <Experiences /> */}
       <Stats />
-      <Testimonials />
       <Instagram />
+      <Testimonials />
       <CTA />
     </main>
   );
