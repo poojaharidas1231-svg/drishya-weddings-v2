@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="space-y-12 text-center">
 
           <h2 className="font-serif text-5xl md:text-6xl">
-            DRISHYA
+            DRISHYA WEDDINGS
           </h2>
 
           <p className="mx-auto max-w-xl text-lg leading-8 text-white/70">

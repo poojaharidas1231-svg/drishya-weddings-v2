@@ -20,7 +20,7 @@ export default function FooterSocial() {
       </Link>
 
       <Link
-        href="https://wa.me/919999999999"
+        href="https://wa.me/919656560010"
         target="_blank"
         className="text-white/60 transition hover:text-white"
       >
