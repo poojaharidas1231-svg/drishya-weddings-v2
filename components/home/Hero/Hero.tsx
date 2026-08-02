@@ -10,7 +10,8 @@ export default function Hero() {
       className="
         relative
         flex
-        min-h-screen pt-20
+        min-h-screen
+        pt-20
         items-center
         justify-center
         overflow-hidden
@@ -20,7 +21,7 @@ export default function Hero() {
       <HeroBackground />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 z-10 bg-black/35" />
+      <div className="absolute inset-0 z-10 bg-black/35 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-20 w-full">
