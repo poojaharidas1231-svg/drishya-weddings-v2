@@ -1,10 +1,15 @@
 "use client";
 
+import { useState } from "react";
+
 import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
+import HeroControls from "./HeroControls";
 import ScrollIndicator from "./ScrollIndicator";
 
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+
   return (
     <section
       className="
@@ -17,18 +22,22 @@ export default function Hero() {
         overflow-hidden
       "
     >
-      {/* Background */}
-      <HeroBackground />
+      <HeroBackground
+        current={current}
+        setCurrent={setCurrent}
+      />
 
-      {/* Dark Overlay */}
       <div className="absolute inset-0 z-10 bg-black/35 pointer-events-none" />
 
-      {/* Content */}
       <div className="relative z-20 w-full">
         <HeroContent />
       </div>
 
-      {/* Scroll Indicator */}
+      <HeroControls
+        current={current}
+        setCurrent={setCurrent}
+      />
+
       <ScrollIndicator />
     </section>
   );
